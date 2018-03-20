@@ -62,6 +62,26 @@ exports.BattleStatuses = {
 		},
 		// Interaction coded in abilities.js
 	},
+	sidestall: {
+	    //this is a side condition
+	    duration: 2,
+	    counterMax: 729,
+	    onStart: function(side) {
+	        this.effectData.counter = 3;
+	    },
+	    onStallMove: function(target) {
+	        let counter = this.effectData.counter || 1;
+	        this.debug("Success chance: " + Math.round(100 / counter) + "%");
+			return !this.random(counter);
+	    },
+	    onRestart: function () {
+			if (this.effectData.counter < this.effect.counterMax) {
+				this.effectData.counter *= 3;
+			}
+			this.effectData.duration = 2;
+		},
+	},
+	
 	raindance: {
 		inherit: true,
 		onWeatherModifyDamage: function (damage, attacker, defender, move) {
