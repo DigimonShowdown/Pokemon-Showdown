@@ -1,6 +1,5 @@
 'use strict';
-// MOVES THAT STILL NEED CLARIFICATION:
-// https://pastebin.com/FNUY31xc
+
 exports.BattleMovedex = {
 	"acidbubble": {
 		accuracy: 90,
@@ -3098,10 +3097,9 @@ exports.BattleMovedex = {
 		flags: {protect: 1, mirror: 1, heal: 1, authentic: 1},
 		accuracy: 100,
 		pp: 3,
-		onAfterMoveSecondarySelf: function (pokemon, target, source, move) {
-			for (let i = 0; i < target.side.active.length; i++) {
-				let allyActive = target.side.foe.active[i];
-				if (allyActive) this.heal(allyActive.maxhp / 2, allyActive);
+		onAfterMoveSecondarySelf: function (source, target, move) {
+			for (let pokemon of source.side.active) {
+				if (pokemon) this.heal(pokemon.maxhp / 2, pokemon, source);
 			}
 		},
 	},
@@ -4512,9 +4510,9 @@ exports.BattleMovedex = {
 		},
 		flags: {protect: 1, mirror: 1},
 		accuracy: 100,
-		onAfterMoveSecondarySelf: function (pokemon, target, move) {
-			for (let active of pokemon.side.active) {
-				if (active) this.boost({def: 1}, active);
+		onAfterMoveSecondarySelf: function (source, target, move) {
+			for (let pokemon of source.side.active) {
+				if (pokemon) this.boost({def: 1}, pokemon, source);
 			}
 		},
 	},
