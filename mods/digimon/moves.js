@@ -4516,7 +4516,7 @@ exports.BattleMovedex = {
 		onAfterMoveSecondarySelf: function (source, target, move) {
 			for (let pokemon of source.side.active) {
 				if (pokemon) this.boost({def: 1}, pokemon, source);
- 			}
+			}
 		},
 	},
 	"gigawattlaser": {
