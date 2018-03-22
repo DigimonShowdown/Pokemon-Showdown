@@ -5065,10 +5065,7 @@ exports.BattleMovedex = {
 				}
 			}
 			if (!targets.length && !anyAirborne) return false; // Fails when there are no grounded Grass types or airborne Pokemon
-			for (let i = 0; i < targets.length; i++) this.boost({
-				atk: 1,
-				spa: 1
-			}, targets[i], source);
+			for (let i = 0; i < targets.length; i++) this.boost({atk: 1, spa: 1}, targets[i], source);
 		},
 	},
 	"grassyterrain": {
@@ -5135,9 +5132,7 @@ exports.BattleMovedex = {
 			}
 			let success = false;
 			for (const target of targets) {
-				success = this.boost({
-					def: 1
-				}, target, source, this.getMove('Flower Shield')) || success;
+				success = this.boost({def: 1}, target, source, this.getMove('Flower Shield')) || success;
 			}
 			return success;
 		},
