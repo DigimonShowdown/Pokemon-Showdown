@@ -673,11 +673,9 @@ exports.BattleMovedex = {
 			this.add('-anim', source, "aeroblast", target);
 		},
 		flags: {protect: 1, mirror: 1},
-		secondary: {//this scares me. it will roll for each target lol -math
-			chance: 50,
-			self: {
-				boosts: {spd: 2},
-			},
+		secondary: false,
+		onAfterMoveSecondarySelf: function (pokemon, target, move) {
+			if (this.random(100) < 50) this.boost({spe: 2}, pokemon, pokemon, move);
 		},
 		target: "allAdjacentFoes",
 		type: "Air",
