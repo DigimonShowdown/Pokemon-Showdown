@@ -348,8 +348,8 @@ class RandomDigimonTeams extends RandomTeams {
 				species: "Devimon",
 				ability: "Virus",
 				moves: ['darkspirit', 'windcutter', 'evilfantasy', 'chaoscloud', 'aurorafreeze', 'evilsquall', 'confusedstorm', 'wingshoes'],
-				baseSignatureMove: "deathclaw",
-				signatureMove: "Death Claw",
+				baseSignatureMove: "deathhand",
+				signatureMove: "Death Hand",
 			},
 			"Dolphmon": {
 				species: "Dolphmon",
