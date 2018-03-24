@@ -537,4 +537,18 @@ exports.BattleAbilities = {
 			}
 		},
 	},
+	
+	//Description change only
+	"deltastream": {
+		inherit: true,
+		desc: "On switch-in, the weather becomes strong winds that remove the weaknesses of the Flying type from Flying-type Pokemon, and the weaknesses of the Air type from Air-type Pokemon. This weather remains in effect until this Ability is no longer active for any Pokemon, or the weather is changed by Desolate Land or Primordial Sea.",
+	},
+	"desolateland": {
+		inherit: true,
+		desc: "On switch-in, the weather becomes extremely harsh sunlight that prevents damaging Water- and Aqua-type moves from executing, in addition to all the effects of Sunny Day. This weather remains in effect until this Ability is no longer active for any Pokemon, or the weather is changed by Delta Stream or Primordial Sea.",
+	},
+	"primordialsea": {
+		inherit: true,
+		desc: "On switch-in, the weather becomes heavy rain that prevents damaging Fire- and Flame-type moves from executing, in addition to all the effects of Rain Dance. This weather remains in effect until this Ability is no longer active for any Pokemon, or the weather is changed by Delta Stream or Desolate Land.",
+	},
 };
