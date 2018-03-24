@@ -1015,7 +1015,7 @@ exports.BattleMovedex = {
 		priority: 0,
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
-			this.add('-anim', source, "roost", target);
+			this.add('-anim', source, "roost", source);
 			this.add('-anim', source, "megapunch", target);
 		},
 		flags: {protect: 1, mirror: 1},
@@ -1108,7 +1108,7 @@ exports.BattleMovedex = {
 		priority: 0,
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
-			this.add('-anim', source, "nastyplot", target);
+			this.add('-anim', source, "nastyplot", source);
 			this.add('-anim', source, "smog", target);
 		},
 		flags: {protect: 1, mirror: 1},
@@ -1158,7 +1158,7 @@ exports.BattleMovedex = {
 		priority: 0,
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
-			this.add('-anim', source, "gearup", target);
+			this.add('-anim', source, "gearup", source);
 			this.add('-anim', source, "twineedle", target);
 		},
 		flags: {protect: 1, mirror: 1, contact: 1},
@@ -1272,7 +1272,7 @@ exports.BattleMovedex = {
 		priority: 0,
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
-			this.add('-anim', source, "shellsmash", target);
+			this.add('-anim', source, "shellsmash", source);
 			this.add('-anim', source, "pinmissile", target);
 		},
 		flags: {protect: 1, mirror: 1},
@@ -1560,7 +1560,7 @@ exports.BattleMovedex = {
 		priority: 0,
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
-			this.add('-anim', source, "acidarmor", target);
+			this.add('-anim', source, "acidarmor", source);
 			this.add('-anim', source, "bodyslam", target);
 		},
 		flags: {protect: 1, mirror: 1},
@@ -1696,7 +1696,7 @@ exports.BattleMovedex = {
 		shortDesc: "Forces the target to switch to a random ally.",
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
-			this.add('-anim', source, "rockpolish", target);
+			this.add('-anim', source, "rockpolish", source);
 			this.add('-anim', source, "acid", target);
 		},
 		flags: {protect: 1, mirror: 1},
@@ -2069,7 +2069,7 @@ exports.BattleMovedex = {
 		desc: "High critical hit ratio.",
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
-			this.add('-anim', source, "charge", target);
+			this.add('-anim', source, "charge", source);
 			this.add('-anim', source, "secretsword", target);
 		},
 		flags: {protect: 1, mirror: 1},
@@ -2089,7 +2089,7 @@ exports.BattleMovedex = {
 		desc: "Ignores target's stat changes.",
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
-			this.add('-anim', source, "extremeevoboost", target);
+			this.add('-anim', source, "extremeevoboost", source);
 			this.add('-anim', source, "spikecannon", target);
 		},
 		flags: {protect: 1, mirror: 1},
@@ -2134,7 +2134,7 @@ exports.BattleMovedex = {
 		desc: "Raises the user's Speed 2 stages.",
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
-			this.add('-anim', source, "cosmicpower", target);
+			this.add('-anim', source, "cosmicpower", source);
 			this.add('-anim', source, "highjumpkick", target);
 		},
 		flags: {protect: 1, mirror: 1, contact: 1},
@@ -2357,7 +2357,7 @@ exports.BattleMovedex = {
 		desc: "25 chance of instantly KOing target.",
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
-			this.add('-anim', source, "swordsdance", target);
+			this.add('-anim', source, "swordsdance", source);
 			this.add('-anim', source, "spacialrend", target);
 		},
 		flags: {protect: 1, mirror: 1},
@@ -2723,7 +2723,7 @@ exports.BattleMovedex = {
 		desc: "KOs user. (Self Destruct)",
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
-			this.add('-anim', source, "imprison", target);
+			this.add('-anim', source, "imprison", source);
 			this.add('-anim', source, "explosion", target);
 		},
 		secondary: false,
@@ -2811,7 +2811,7 @@ exports.BattleMovedex = {
 		desc: "",
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
-			this.add('-anim', source, "grudge", target);
+			this.add('-anim', source, "grudge", source);
 			this.add('-anim', source, "icebeam", target);
 		},
 		flags: {protect: 1, mirror: 1},
@@ -2831,7 +2831,7 @@ exports.BattleMovedex = {
 		desc: "Raises user's Speed 2 stages.",
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
-			this.add('-anim', source, "cosmicpower", target);
+			this.add('-anim', source, "cosmicpower", source);
 			this.add('-anim', source, "block", target);
 		},
 		flags: {protect: 1, mirror: 1, distance: 1, contact: 1},
@@ -2917,7 +2917,7 @@ exports.BattleMovedex = {
 		desc: "Never misses.",
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
-			this.add('-anim', source, "gearup", target);
+			this.add('-anim', source, "gearup", source);
 			this.add('-anim', source, "mistball", target);
 		},
 		flags: {protect: 1, mirror: 1},
@@ -3107,7 +3107,7 @@ exports.BattleMovedex = {
 		desc: "80% chance to flinch the target.",
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
-			this.add('-anim', source, "gearup", target);
+			this.add('-anim', source, "gearup", source);
 			this.add('-anim', source, "zapcannon", target);
 		},
 		flags: {protect: 1, mirror: 1},
@@ -3130,7 +3130,7 @@ exports.BattleMovedex = {
 		desc: "Ignores target's stat changes. Drains 1/2 damage dealt.",
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
-			this.add('-anim', source, "refresh", target);
+			this.add('-anim', source, "refresh", source);
 			this.add('-anim', source, "neverendingnightmare", target);
 		},
 		flags: {protect: 1, mirror: 1, heal: 1, contact: 1},
@@ -3193,7 +3193,7 @@ exports.BattleMovedex = {
 		desc: "Restore 50% HP and recover all status effects.",
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
-			this.add('-anim', source, "aquaring", target);
+			this.add('-anim', source, "aquaring", source);
 			this.add('-anim', source, "attract", target);
 		},
 		flags: {heal: 1, snatch: 1},
@@ -3315,7 +3315,7 @@ exports.BattleMovedex = {
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
 			this.add('-anim', source, "doomdesire", target);
-			this.add('-anim', source, "moonlight", target);
+			this.add('-anim', source, "moonlight", source);
 		},
 		flags: {protect: 1, mirror: 1, heal: 1, authentic: 1},
 		accuracy: 100,
@@ -3383,7 +3383,7 @@ exports.BattleMovedex = {
 		desc: "20% chance of either paralyzing, putting to sleep, or panicing the target. Each ailment has a 6.67 chance of being inflicted.",
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
-			this.add('-anim', source, "moonlight", target);
+			this.add('-anim', source, "moonlight", source);
 			this.add('-anim', source, "hyperbeam", target);
 		},
 		flags: {protect: 1, mirror: 1},
@@ -3441,7 +3441,7 @@ exports.BattleMovedex = {
 		desc: "Hits 2 times. High chance of critical hit.",
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
-			this.add('-anim', source, "honeclaws", target);
+			this.add('-anim', source, "honeclaws", source);
 			this.add('-anim', source, "crushclaw", target);
 		},
 		flags: {protect: 1, mirror: 1, contact: 1},
@@ -3484,7 +3484,7 @@ exports.BattleMovedex = {
 		desc: "Absorbs 50 damage as HP. Inflicts Poison.",
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
-			this.add('-anim', source, "grudge", target);
+			this.add('-anim', source, "grudge", source);
 			this.add('-anim', source, "thousandwaves", target);
 		},
 		flags: {protect: 1, mirror: 1, heal: 1},
@@ -4486,7 +4486,7 @@ exports.BattleMovedex = {
 		desc: "User cannot move next turn. Raises user's Defense 1 stage.",
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
-			this.add('-anim', source, "happyhour", target);
+			this.add('-anim', source, "happyhour", source);
 			this.add('-anim', source, "fleurcannon", target);
 		},
 		flags: {protect: 1, mirror: 1, authentic: 1, recharge: 1},
@@ -4702,7 +4702,7 @@ exports.BattleMovedex = {
 		desc: "Hits 2-5 times.",
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
-			this.add('-anim', source, "gearup", target);
+			this.add('-anim', source, "gearup", source);
 			this.add('-anim', source, "cut", target);
 		},
 		flags: {protect: 1, mirror: 1, contact: 1},
@@ -4874,7 +4874,7 @@ exports.BattleMovedex = {
 		desc: "10% chance of Flinch.",
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
-			this.add('-anim', source, "acidarmor", target);
+			this.add('-anim', source, "acidarmor", source);
 			this.add('-anim', source, "smog", target);
 		},
 		flags: {protect: 1, mirror: 1},
@@ -4895,7 +4895,7 @@ exports.BattleMovedex = {
 		pp: 15,
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
-			this.add('-anim', source, "nastyplot", target);
+			this.add('-anim', source, "nastyplot", source);
 			this.add('-anim', source, "toxic", target);
 		},
 		flags: {protect: 1, mirror: 1},
@@ -4942,7 +4942,7 @@ exports.BattleMovedex = {
 		desc: "Hits 2-5 times. 5% chance of Confusion.",
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
-			this.add('-anim', source, "nastyplot", target);
+			this.add('-anim', source, "nastyplot", source);
 			this.add('-anim', source, "sludgebomb", target);
 		},
 		flags: {protect: 1, mirror: 1},
@@ -4965,7 +4965,7 @@ exports.BattleMovedex = {
 		desc: "30% chance to lower target's Speed 2 stages.",
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
-			this.add('-anim', source, "banefulbunker", target);
+			this.add('-anim', source, "banefulbunker", source);
 			this.add('-anim', source, "sludgebomb", target);
 		},
 		flags: {protect: 1, mirror: 1},
@@ -4987,7 +4987,7 @@ exports.BattleMovedex = {
 		desc: "10% chance of Poison. 5% chance of Flinch. 20% chance to lower target's Speed 1 stage.",
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
-			this.add('-anim', source, "nastyplot", target);
+			this.add('-anim', source, "nastyplot", source);
 			this.add('-anim', source, "aciddownpour", target);
 		},
 		flags: {protect: 1, mirror: 1},
