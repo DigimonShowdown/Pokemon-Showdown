@@ -1130,7 +1130,7 @@ exports.BattleMovedex = {
 		basePower: 115,
 		category: "Physical",
 		desc: "No additional effect.",
-		shortDesc "No additional effect.",
+		shortDesc: "No additional effect.",
 		id: "megaflame",
 		name: "Mega Flame",
 		pp: 3,
@@ -1216,7 +1216,7 @@ exports.BattleMovedex = {
 		basePower: 120,
 		category: "Physical",
 		desc: "Ignores target’s stat changes.",
-		shortDesc "Ignores target’s stat changes.",
+		shortDesc: "Ignores target’s stat changes.",
 		id: "frozenclaw",
 		name: "Frozen Claw",
 		pp: 2,
@@ -1285,7 +1285,7 @@ exports.BattleMovedex = {
 		basePower: 40,
 		category: "Physical",
 		desc: "Hits 2 times in one turn.",
-		shortDesc "Hits 2 times in one turn.",
+		shortDesc: "Hits 2 times in one turn.",
 		id: "junglebone",
 		name: "Jungle Bone",
 		pp: 3,
@@ -1830,6 +1830,12 @@ exports.BattleMovedex = {
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
 			this.add('-anim', source, "hydropump", target);
+		},
+		secondary: {
+			chance: 20,
+			onHit: function (target, source, move) {
+				move.forceSwitch = true;
+			},
 		},
 		flags: {protect: 1, mirror: 1},
 		accuracy: 95,
@@ -2585,11 +2591,9 @@ exports.BattleMovedex = {
 		accuracy: 100,
 		pp: 5,
 		noPPBoosts: true,
-		secondary: {
-			chance: 50,
-			self: {
-				boosts: {def: 2},
-			},
+		secondary: false,
+		onAfterMoveSecondarySelf: function (pokemon, target, move) {
+			if (this.random(100) < 50) this.boost({def: 2}, pokemon, pokemon, move);
 		},
 	},
 	"heartattack": {
@@ -2705,7 +2709,7 @@ exports.BattleMovedex = {
 		noPPBoosts: true,
 		secondary: {
 			chance: 100,
-			boosts: {def: -1},
+			boosts: {def: -2},
 		},
 	},
 	"fragbomb": {
@@ -2722,6 +2726,7 @@ exports.BattleMovedex = {
 			this.add('-anim', source, "imprison", target);
 			this.add('-anim', source, "explosion", target);
 		},
+		secondary: false,
 		flags: {protect: 1, mirror: 1},
 		accuracy: 100,
 		pp: 2,
@@ -2764,6 +2769,7 @@ exports.BattleMovedex = {
 			this.attrLastMove('[still]');
 			this.add('-anim', source, "eruption", target);
 		},
+		secondary: false,
 		flags: {protect: 1, mirror: 1, defrost: 1},
 		accuracy: 90,
 		pp: 3,
@@ -2809,6 +2815,7 @@ exports.BattleMovedex = {
 			this.add('-anim', source, "icebeam", target);
 		},
 		flags: {protect: 1, mirror: 1},
+		secondary: false,
 		accuracy: 100,
 		pp: 3,
 		noPPBoosts: true,
@@ -2851,6 +2858,7 @@ exports.BattleMovedex = {
 			this.attrLastMove('[still]');
 			this.add('-anim', source, "waterspout", target);
 		},
+		secondary: false,
 		flags: {protect: 1, mirror: 1},
 		accuracy: 100,
 		pp: 3,
@@ -2869,6 +2877,7 @@ exports.BattleMovedex = {
 			this.attrLastMove('[still]');
 			this.add('-anim', source, "plasmafists", target);
 		},
+		secondary: false,
 		flags: {protect: 1, mirror: 1},
 		accuracy: 90,
 		pp: 2,
@@ -2895,6 +2904,7 @@ exports.BattleMovedex = {
 		pp: 2,
 		noPPBoosts: true,
 		multihit: [2, 5],
+		secondary: false,
 	},
 	"garurutomahawk": {
 		name: "Garuru Tomahawk",
@@ -2914,6 +2924,7 @@ exports.BattleMovedex = {
 		accuracy: true,
 		pp: 3,
 		noPPBoosts: true,
+		secondary: false,
 	},
 	"blacktornado": {
 		name: "Black Tornado",
@@ -2935,6 +2946,7 @@ exports.BattleMovedex = {
 		noPPBoosts: true,
 		ignoreDefensive: true,
 		ignoreEvasion: true,
+		secondary: false,
 	},
 	"tomahawkstinger": {
 		name: "Tomahawk Stinger",
@@ -2979,6 +2991,7 @@ exports.BattleMovedex = {
 		ignoreDefensive: true,
 		ignoreEvasion: true,
 		critRatio: 2,
+		secondary: false,
 	},
 	"heavensjudgment": {
 		name: "Heaven's Judgment",
@@ -2998,6 +3011,7 @@ exports.BattleMovedex = {
 		pp: 3,
 		noPPBoosts: true,
 		critRatio: 2,
+		secondary: false,
 	},
 	"blackdeathcloud": {
 		name: "Black Death Cloud",
@@ -3039,6 +3053,7 @@ exports.BattleMovedex = {
 		accuracy: 95,
 		pp: 2,
 		noPPBoosts: true,
+		secondary: false,
 	},
 	"brainrupture": {
 		name: "Brain Rupture",
@@ -3079,6 +3094,7 @@ exports.BattleMovedex = {
 		accuracy: true,
 		pp: 3,
 		noPPBoosts: true,
+		secondary: false,
 	},
 	"atomicray": {
 		name: "Atomic Ray",
@@ -3124,6 +3140,7 @@ exports.BattleMovedex = {
 		ignoreDefensive: true,
 		ignoreEvasion: true,
 		drain: [1, 2],
+		secondary: false,
 	},
 	"infinitycannon": {
 		name: "Infinity Cannon",
@@ -3143,6 +3160,7 @@ exports.BattleMovedex = {
 		pp: 2,
 		noPPBoosts: true,
 		multihit: [1, 2],
+		secondary: false,
 	},
 	"firetornado": {
 		name: "Fire Tornado",
@@ -3162,6 +3180,7 @@ exports.BattleMovedex = {
 		accuracy: 100,
 		pp: 5,
 		noPPBoosts: true,
+		secondary: false,
 	},
 	"oceanlove": {
 		name: "Ocean Love",
@@ -3181,6 +3200,7 @@ exports.BattleMovedex = {
 		accuracy: true,
 		pp: 5,
 		noPPBoosts: true,
+		secondary: false,
 		onHitSide: function (side) {
 			let didSomething = false;
 			for (let pokemon of side.active) {
@@ -3301,6 +3321,7 @@ exports.BattleMovedex = {
 		accuracy: 100,
 		pp: 3,
 		noPPBoosts: true,
+		secondary: false,
 		onAfterMoveSecondarySelf: function (pokemon, target, source, move) {
 			for (let i = 0; i < target.side.active.length; i++) {
 				let allyActive = target.side.foe.active[i];
@@ -3326,6 +3347,7 @@ exports.BattleMovedex = {
 		pp: 3,
 		noPPBoosts: true,
 		forceSwitch: true,
+		secondary: false,
 	},
 	"darknesszone": {
 		name: "Darkness Zone",
@@ -3345,6 +3367,7 @@ exports.BattleMovedex = {
 		pp: 3,
 		noPPBoosts: true,
 		multihit: 3,
+		secondary: false,
 		onAfterMoveSecondary: function (target, source, move) {
 			this.boost({def: -1});
 		},
@@ -3425,6 +3448,7 @@ exports.BattleMovedex = {
 		accuracy: 95,
 		pp: 3,
 		noPPBoosts: true,
+		secondary: false,
 		multihit: 2,
 		critRatio: 2,
 	},
@@ -3443,6 +3467,7 @@ exports.BattleMovedex = {
 			this.add('-anim', source, "judgment", target);
 		},
 		flags: {protect: 1, mirror: 1},
+		secondary: false,
 		accuracy: 90,
 		pp: 3,
 		noPPBoosts: true,
@@ -3511,11 +3536,9 @@ exports.BattleMovedex = {
 		accuracy: 100,
 		pp: 3,
 		noPPBoosts: true,
-		secondary: {
-			chance: 100,
-			self: {
-				boosts: {atk: 2},
-			},
+		secondary: false,
+		onAfterMoveSecondarySelf: function (pokemon, target, move) {
+			this.boost({atk: 2}, pokemon, pokemon, move);
 		},
 	},
 	//Generic attacks start here
@@ -3535,6 +3558,7 @@ exports.BattleMovedex = {
 		accuracy: true,
 		pp: 20,
 		boosts: {atk: 2},
+		secondary: false,
 	},
 	"heatbreath": {
 		name: "Heat Breath",
@@ -3552,6 +3576,7 @@ exports.BattleMovedex = {
 		flags: {protect: 1, mirror: 1, defrost: 1},
 		accuracy: 100,
 		pp: 30,
+		secondary: false,
 	},
 	"firetower": {
 		name: "Fire Tower",
@@ -3571,6 +3596,7 @@ exports.BattleMovedex = {
 		pp: 20,
 		ignoreDefensive: true,
 		ignoreEvasion: true,
+		secondary: false,
 	},
 	"firewall": {
 		name: "Firewall",
@@ -3590,6 +3616,7 @@ exports.BattleMovedex = {
 		accuracy: true,
 		pp: 10,
 		//mostly copy-paste from Spiky Shield
+		secondary: false,
 		stallingMove: true,
 		volatileStatus: 'firewall',
 		onTryHit: function (target, source, move) {
@@ -3661,6 +3688,7 @@ exports.BattleMovedex = {
 		flags: {protect: 1, mirror: 1},
 		pp: 15,
 		accuracy: 95,
+		secondary: false,
 	},
 	"prominencebeam": {
 		name: "Prominence Beam",
@@ -3678,6 +3706,7 @@ exports.BattleMovedex = {
 		flags: {protect: 1, mirror: 1},
 		pp: 10,
 		accuracy: 95,
+		secondary: false,
 	},
 	"hailspear": {
 		name: "Hail Spear",
@@ -3843,6 +3872,7 @@ exports.BattleMovedex = {
 			this.attrLastMove('[still]');
 			this.add('-anim', source, "magnetrise", target);
 		},
+		secondary: false,
 		flags: {},
 		pp: 15,
 		accuracy: true,
@@ -3889,6 +3919,7 @@ exports.BattleMovedex = {
 		},
 		flags: {protect: 1, mirror: 1},
 		accuracy: 100,
+		secondary: false,
 	},
 	"confusedstorm": {
 		name: "Confused Storm",
@@ -3970,6 +4001,7 @@ exports.BattleMovedex = {
 		},
 		flags: {protect: 1, mirror: 1},
 		accuracy: true,
+		secondary: false,
 	},
 	"earthcoat": {
 		name: "Earth Coat",
@@ -3987,6 +4019,7 @@ exports.BattleMovedex = {
 		flags: {snatch: 1},
 		accuracy: true,
 		pp: 10,
+		secondary: false,
 		onHitSide: function (side) {
 			for (let pokemon of side.active) {
 				if (pokemon) {
@@ -4010,6 +4043,7 @@ exports.BattleMovedex = {
 			this.attrLastMove('[still]');
 			this.add('-anim', source, "coil", target);
 		},
+		secondary: false,
 		flags: {snatch: 1},
 		accuracy: true,
 		boosts: {
@@ -4091,6 +4125,7 @@ exports.BattleMovedex = {
 		flags: {protect: 1, mirror: 1},
 		accuracy: 75,
 		volatileStatus: 'bug',
+		secondary: false,
 	},
 	"rockfall": {
 		name: "Rock Fall",
@@ -4108,6 +4143,7 @@ exports.BattleMovedex = {
 		},
 		flags: {protect: 1, mirror: 1},
 		accuracy: 95,
+		secondary: false,
 	},
 	"venomdisaster": {
 		name: "Venom Disaster",
@@ -4146,6 +4182,7 @@ exports.BattleMovedex = {
 		},
 		flags: {protect: 1, mirror: 1},
 		accuracy: true,
+		secondary: false,
 	},
 	"blackout": {
 		name: "Blackout",
@@ -4230,6 +4267,7 @@ exports.BattleMovedex = {
 		flags: {mirror: 1},
 		accuracy: 95,
 		breaksProtect: true,
+		secondary: false,
 	},
 	"hideandseek": {
 		name: "Hide and Seek",
@@ -4289,6 +4327,7 @@ exports.BattleMovedex = {
 		},
 		flags: {heal: 1},
 		accuracy: true,
+		secondary: false,
 		onHitSide: function (side) {
 			let didSomething = false;
 			for (let pokemon of side.active) {
@@ -4306,6 +4345,7 @@ exports.BattleMovedex = {
 		category: "Status",
 		type: "Holy",
 		target: "self",
+		secondary: false,
 		desc: "Raises target's Speed and Sp.Defense 1 stage.",
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
@@ -4330,6 +4370,7 @@ exports.BattleMovedex = {
 		desc: "Priority +3. User's party is Protected for one turn.",
 		flags: {snatch: 1},
 		accuracy: 100,
+		secondary: false,
 		stallingMove: true,
 		sideCondition: 'saintshield',
 		onPrepareHit: function (target, source, move, pokemon) {
@@ -4404,6 +4445,7 @@ exports.BattleMovedex = {
 		},
 		flags: {protect: 1, mirror: 1},
 		accuracy: true,
+		secondary: false,
 	},
 	"holyjudgment": {
 		name: "Holy Judgment",
@@ -4449,6 +4491,7 @@ exports.BattleMovedex = {
 		},
 		flags: {protect: 1, mirror: 1, authentic: 1, recharge: 1},
 		accuracy: 100,
+		secondary: false,
 		onAfterMoveSecondarySelf: function (pokemon, target, move) {
 			this.boost({def: 1}, pokemon, pokemon, move);
 			pokemon.addVolatile('mustrecharge');
@@ -4470,6 +4513,7 @@ exports.BattleMovedex = {
 		flags: {snatch: 1},
 		accuracy: true,
 		pp: 20,
+		secondary: false,
 		boosts: {
 			atk: 1,
 			spe: 1,
@@ -4491,6 +4535,7 @@ exports.BattleMovedex = {
 			this.add('-anim', source, "encore", target);
 		},
 		flags: {snatch: 1},
+		secondary: false,
 		accuracy: true,
 		boosts: {
 			atk: 2,
@@ -4515,6 +4560,7 @@ exports.BattleMovedex = {
 		},
 		flags: {protect: 1, mirror: 1, contact: 1},
 		accuracy: 95,
+		secondary: false,
 	},
 	"fightingaura": {
 		name: "Fighting Aura",
@@ -4599,7 +4645,6 @@ exports.BattleMovedex = {
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
 			this.add('-anim', source, "happyhour", source);
-			//this.add('-anim', source, "takedown", target);
 		},
 		flags: {protect: 1, mirror: 1, charge: 1},
 		accuracy: 95,
@@ -4663,6 +4708,7 @@ exports.BattleMovedex = {
 		flags: {protect: 1, mirror: 1, contact: 1},
 		accuracy: 95,
 		multihit: [2, 5],
+		secondary: false,
 	},
 	"upgrade": {
 		name: "Upgrade",
@@ -4687,6 +4733,7 @@ exports.BattleMovedex = {
 			spa: 1,
 			spe: 1,
 		},
+		secondary: false,
 	},
 	"reverseprogram": {
 		name: "Reverse Program",
@@ -4705,6 +4752,7 @@ exports.BattleMovedex = {
 		flags: {protect: 1, mirror: 1},
 		accuracy: true,
 		volatileStatus: 'bug',
+		secondary: false,
 	},
 	"antiattackfield": {
 		name: "Anti-Attack Field",
@@ -4722,6 +4770,7 @@ exports.BattleMovedex = {
 		},
 		flags: {protect: 1, mirror: 1},
 		accuracy: 100,
+		secondary: false,
 		onAfterMoveSecondarySelf: function (source, target, move) {
 			for (let pokemon of source.side.active) {
 				if (pokemon) this.boost({def: 1}, pokemon, source);
@@ -4744,6 +4793,7 @@ exports.BattleMovedex = {
 		},
 		flags: {protect: 1, mirror: 1, recharge: 1},
 		accuracy: 90,
+		secondary: false,
 		self: {
 			volatileStatus: 'mustrecharge',
 		},
@@ -4872,18 +4922,13 @@ exports.BattleMovedex = {
 		},
 		flags: {protect: 1, mirror: 1},
 		accuracy: 80,
-		secondaries: [
-			{
-				chance: 15,
-				status: 'psn',
-			},
-			{
-				chance: 100,
-				self: {
-					boosts: {def: 1},
-				},
-			},
-		],
+		onAfterMoveSecondarySelf: function (pokemon, target, move) {
+			this.boost({def: 1}, pokemon, pokemon, move);
+		},
+		secondary: {
+			chance: 15,
+			status: 'psn',
+		},
 	},
 	"poopfling": {
 		name: "Poop Fling",
@@ -4903,9 +4948,9 @@ exports.BattleMovedex = {
 		flags: {protect: 1, mirror: 1},
 		accuracy: 100,
 		multihit: [2, 5],
-		secondary: {
-			chance: 5,
-			volatileStatus: 'confusion',
+		secondary: false,
+		onAfterMoveSecondary: function (target, source, move) {
+			if (this.random(100) < 5) target.addVolatile('confusion', source);
 		},
 	},
 	"guerillapoop": {
