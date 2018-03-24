@@ -537,7 +537,7 @@ exports.BattleAbilities = {
 			}
 		},
 	},
-	
+
 	//Description change only
 	"deltastream": {
 		inherit: true,
