@@ -2190,7 +2190,7 @@ exports.BattleMovedex = {
 		type: "Filth",
 		target: "any",
 		desc: "Halves target’s HP. 50% chance to sleep target.",
-		shortDesc: "Halves target’s HP. 50% chance to sleep target."
+		shortDesc: "Halves target’s HP. 50% chance to sleep target.",
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
 			this.add('-anim', source, "topsyturvy", target);
@@ -2259,7 +2259,7 @@ exports.BattleMovedex = {
 		type: "Flame",
 		target: "allAdjacentFoes",
 		desc: "100% chance of raising the user’s Speed by 1. Hits all adjacent foes.",
-		shortDesc: "Raises user’s Speed by 1."
+		shortDesc: "Raises user’s Speed by 1.",
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
 			this.add('-anim', source, "sunsteelstrike", target);
@@ -2281,7 +2281,7 @@ exports.BattleMovedex = {
 		category: "Special",
 		type: "Mech",
 		target: "allAdjacentFoes",
-		desc: "Causes the foe(s) to be buggy." Hits all adjacent foes.",
+		desc: "Causes the foe(s) to be buggy. Hits all adjacent foes.",
 		shortDesc: "Causes the foe(s) to be buggy.",
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
@@ -2798,7 +2798,7 @@ exports.BattleMovedex = {
 		type: "Flame",
 		target: "allAdjacentFoes",
 		desc: "No additional effect. Hits all adjacent foes.",
-		shortDesc: "No additional effect."
+		shortDesc: "No additional effect.",
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
 			this.add('-anim', source, "eruption", target);
@@ -2865,7 +2865,7 @@ exports.BattleMovedex = {
 		type: "Battle",
 		target: "any",
 		desc: "100% chance to raise the user’s Speed by 2.",
-		shortDesc: "Raises the user’s Speed by 2."
+		shortDesc: "Raises the user’s Speed by 2.",
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
 			this.add('-anim', source, "cosmicpower", source);
@@ -2891,7 +2891,7 @@ exports.BattleMovedex = {
 		type: "Aqua",
 		target: "allAdjacent",
 		desc: "No additional effect. Hits adjacent monsters.",
-		shortDesc: "No additional effect."
+		shortDesc: "No additional effect.",
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
 			this.add('-anim', source, "waterspout", target);
