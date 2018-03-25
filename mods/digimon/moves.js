@@ -3654,6 +3654,7 @@ exports.BattleMovedex = {
 		flags: {defrost: 1},
 		accuracy: true,
 		pp: 10,
+		secondary: false,
 		stallingMove: true,
 		sideCondition: 'firewall',
 		onHitSide: function (side, source) {
