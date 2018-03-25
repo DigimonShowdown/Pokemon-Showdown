@@ -2345,7 +2345,6 @@ exports.BattleMovedex = {
 		id: "flowercannon",
 		priority: 1,
 		basePower: 100,
-		priority: 1,
 		category: "Special",
 		type: "Nature",
 		target: "any",
