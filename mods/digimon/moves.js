@@ -3222,7 +3222,7 @@ exports.BattleMovedex = {
 		type: "Holy",
 		target: "allAdjacentFoes",
 		desc: "No additional effect. Hits all adjacent foes.",
-		shortDesc: "No additional effect."
+		shortDesc: "No additional effect.",
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
 			this.add('-anim', source, "skillswap", target);
