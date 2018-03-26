@@ -350,13 +350,6 @@ exports.BattleMovedex = {
 			this.add('-anim', source, "watergun", target);
 		},
 		flags: {protect: 1, mirror: 1},
-		/*
-		onModifyMove: function (move) {
-		  if (this.random(4) >= 1} {
-		    move.forceSwitch = true;
-		 )
-		},
-		*/
 		secondary: {
 			chance: 75,
 			onHit: function (target, source, move) {
@@ -5112,7 +5105,7 @@ exports.BattleMovedex = {
 		type: "Filth",
 		target: "allAdjacentFoes",
 		desc: "20% lower foe(s) Speed by 1. 5% chance of flinch. 10% chance of poison. Hits all adjacent foes.",
-		shortDesc: "20% lower foe(s) Speed by 1. 5% chance of flinch. 10% chance of poison."
+		shortDesc: "20% lower foe(s) Speed by 1. 5% chance of flinch. 10% chance of poison.",
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
 			this.add('-anim', source, "nastyplot", source);
@@ -5366,5 +5359,16 @@ exports.BattleMovedex = {
 			}
 			return success;
 		},
+	},
+	//Move description changes
+	"raindance": {
+		inherit: true,
+		desc: "For 5 turns, the weather becomes Rain Dance. The damage of Water- and Aqua-type attacks is multiplied by 1.5 and the damage of Fire- and Flame-type attacks is multiplied by 0.5 during the effect. Lasts for 8 turns if the user is holding Damp Rock. Fails if the current weather is Rain Dance.",
+		shortDesc: "For 5 turns, rain powers Water/Aqua moves.",
+	},
+	"sunnyday": {
+		inherit: true,
+		desc: "For 5 turns, the weather becomes Sunny Day. The damage of Fire- and Flame-type attacks is multiplied by 1.5 and the damage of Water- and Aqua-type attacks is multiplied by 0.5 during the effect. Lasts for 8 turns if the user is holding Heat Rock. Fails if the current weather is Sunny Day.",
+		shortDesc: "For 5 turns, sunlight powers Fire/Flame moves.",
 	},
 };
