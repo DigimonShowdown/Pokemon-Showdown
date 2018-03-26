@@ -3472,7 +3472,6 @@ exports.BattleMovedex = {
 		id: "thornwhip",
 		priority: 1,
 		basePower: 115,
-		priority: 1,
 		category: "Physical",
 		type: "Nature",
 		target: "normal",
