@@ -2190,7 +2190,7 @@ exports.BattleMovedex = {
 		type: "Filth",
 		target: "any",
 		desc: "Halves target’s HP. 50% chance to sleep target.",
-		shortDesc: "Halves target’s HP. 50% chance to sleep target."
+		shortDesc: "Halves target’s HP. 50% chance to sleep target.",
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
 			this.add('-anim', source, "topsyturvy", target);
@@ -2259,7 +2259,7 @@ exports.BattleMovedex = {
 		type: "Flame",
 		target: "allAdjacentFoes",
 		desc: "100% chance of raising the user’s Speed by 1. Hits all adjacent foes.",
-		shortDesc: "Raises user’s Speed by 1."
+		shortDesc: "Raises user’s Speed by 1.",
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
 			this.add('-anim', source, "sunsteelstrike", target);
@@ -2345,7 +2345,6 @@ exports.BattleMovedex = {
 		id: "flowercannon",
 		priority: 1,
 		basePower: 100,
-		priority: 1,
 		category: "Special",
 		type: "Nature",
 		target: "any",
@@ -2695,7 +2694,7 @@ exports.BattleMovedex = {
 		category: "Special",
 		type: "Battle",
 		target: "allAdjacentFoes",
-		desc: "30% chance to lower foe(s) Attack, Special Attack and Special Defense by 2. 10% chance of sleep. Hits all adjacent foes and is a sound move.",",
+		desc: "30% chance to lower foe(s) Attack, Special Attack and Special Defense by 2. 10% chance of sleep. Hits all adjacent foes and is a sound move.",
 		shortDesc: "30% chance to lower foe(s) Atk, Sp.Atk, Sp.Def by 2. 10% chance of sleep.",
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
@@ -2798,7 +2797,7 @@ exports.BattleMovedex = {
 		type: "Flame",
 		target: "allAdjacentFoes",
 		desc: "No additional effect. Hits all adjacent foes.",
-		shortDesc: "No additional effect."
+		shortDesc: "No additional effect.",
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
 			this.add('-anim', source, "eruption", target);
@@ -2865,7 +2864,7 @@ exports.BattleMovedex = {
 		type: "Battle",
 		target: "any",
 		desc: "100% chance to raise the user’s Speed by 2.",
-		shortDesc: "Raises the user’s Speed by 2."
+		shortDesc: "Raises the user’s Speed by 2.",
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
 			this.add('-anim', source, "cosmicpower", source);
@@ -2891,7 +2890,7 @@ exports.BattleMovedex = {
 		type: "Aqua",
 		target: "allAdjacent",
 		desc: "No additional effect. Hits adjacent monsters.",
-		shortDesc: "No additional effect."
+		shortDesc: "No additional effect.",
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
 			this.add('-anim', source, "waterspout", target);
@@ -3370,7 +3369,7 @@ exports.BattleMovedex = {
 		type: "Flame",
 		target: "allAdjacentFoes",
 		desc: "Hits adjacent foes. Heals allies by 50% max HP. Hits all adjacent foes, 1.3 HP if Big Root is held by the user.",
-		shortDesc: "Hits adjacent foes. Heals allies by 50% max HP."
+		shortDesc: "Hits adjacent foes. Heals allies by 50% max HP.",
 		onPrepareHit: function (target, source, move) {
 			this.attrLastMove('[still]');
 			this.add('-anim', source, "doomdesire", target);
