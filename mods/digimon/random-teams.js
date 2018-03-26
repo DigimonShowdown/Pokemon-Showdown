@@ -1364,13 +1364,23 @@ class RandomDigimonTeams extends RandomTeams {
 		};
 		//Generate the team randomly.
 		let pool = Object.keys(sets);
+		let weakmonclause = false;
 		for (let i = 0; i < 6; i++) {
 			let name = this.sampleNoReplace(pool);
 			let set = sets[name];
-			if (set.rate && Math.ceil(Math.random() * set.rate !== 1)) {
+			if (!(this.random(set.rarity) === 0)) {
 				// Skip this digimon
 				i--;
 				continue;
+			}
+			if (set.moves.includes('bubble')) {
+				if (weakmonclause === true) {
+					// Skip this digimon
+					i--;
+					continue;
+				} else {
+					weakmonclause = true;
+				}
 			}
 			set.level = 100;
 			if (!set.name) set.name = name;
